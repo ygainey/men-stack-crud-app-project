@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create New User</h1>
+    <form action="" method="">
+        <label for="userName">Username:</label>
+        <input type="text" name="userName" id="userName" required />
+
+        <label for="password">Pasword:</label>
+        <input type="password" name="password" id="password" required />
+
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" required/>
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"/>
+
+        <label for="dOB">Date Of Birth:</label>
+        <input type="date" name="dOB" id="dOB" required/>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required/>
+
+        <label for="phone">Phone:</label>
+        <input type="number" name="phone" id="phone" required/>
+
+        <label for="team">Team:</label>
+        <select id="team" name="team" required>
+            <option>Engineer</option>
+            <option>HR</option>
+            <option>Marketing</option>
+            <option>Operations</option>
+        </select>
+
+        <label for="isAdmin">Admin:</label>
+        <select id="isAdmin" name="isAdmin" required>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <button type="submit">Create User</button>
+    </form>
+</body>
+</html>
