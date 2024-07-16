@@ -6,15 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('../partials/_nav.ejs') %>
     <h1>Create New User</h1>
-    <form action="" method="">
+    <form action="/admin" method="POST">
         <label for="userName">Username:</label>
         <input type="text" name="userName" id="userName" required />
 
         <label for="password">Pasword:</label>
         <input type="password" name="password" id="password" required />
 
-        <label>Confirm Password:</label>
+        <label for="confirmpassword">Confirm Password:</label>
         <input type="password" name="confirmpassword" id="confirmpassword" required/>
         
         <label for="name">Name:</label>
@@ -38,10 +39,7 @@
         </select>
 
         <label for="isAdmin">Admin:</label>
-        <select id="isAdmin" name="isAdmin" required>
-            <option>Yes</option>
-            <option>No</option>
-        </select>
+        <input type="checkbox" name="isAdmin" id="isAdmin" />
 
         <button type="submit">Create User</button>
     </form>

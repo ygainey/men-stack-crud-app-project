@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const contactSchema = mongoose.Schema({
+const contactSchema = new mongoose.Schema({
     email:{
         type: String,
         required: true
@@ -40,7 +40,7 @@ const employeeSchema = mongoose.Schema({
         required: true,
         enum: ['Engineer', 'HR', 'Marketing', 'Operations']
     },
-    contact: [contactSchema],
+    contact: contactSchema,
 })
 
 const User = mongoose.model('User', employeeSchema)

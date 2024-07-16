@@ -1,8 +1,7 @@
 const isAdminSignedIn = (req, res, next) => {
-    if(!req.user.isAdmin){
-        return res.redirect('/')
+    if(!req.session.user.isAdmin){
+        return res.redirect('/index')
     }
-    res.render('admin/index.ejs')
     next()   
 }
   

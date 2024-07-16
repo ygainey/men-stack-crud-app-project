@@ -11,9 +11,11 @@ const MongoStore = require("connect-mongo");
 
 //local imports
 const isSignedIn = require('./middleware/is-signed-in.js');
-const isAdmin = require('./middleware/is-admin.js')
-const signInController = require('./controllers/sign-in.js');
-const signUpController = require('./controllers/sign-up.js');
+const isAdminSignedIn = require('./middleware/is-admin.js')
+const passUserToView = require('./middleware/pass-user-to-view.js');
+const authController = require('./controllers/auth.js');
+const routesController = require('./controllers/routes.js')
+const adRoutesController = require('./controllers/adminRoutes.js')
 
 //set port
 const port = process.env.PORT || 4000
@@ -26,9 +28,10 @@ mongoose.connection.on('connected', () =>{
 })
 
 //middleware used through application
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
@@ -38,20 +41,22 @@ app.use(
           mongoUrl: process.env.MONGODB_URI
         }) 
     })
-)
+);
+app.use(passUserToView);
 
 //homepage
 app.get('/', (req, res) =>{
     res.render('index.ejs')
-})
+});
 
 //auth
-app.use('/sign-in', signInController)
+app.use('/auth', authController)
 app.use(isSignedIn)
-app.use(isAdmin)
 //logged in routes
-app.use('/sign-up', signUpController)
+app.use('/index', routesController)
+app.use('/admin', adRoutesController)
 
+ 
 //generic 404 page
 app.get('*', (req, res) => {
     res.render('404.ejs')
