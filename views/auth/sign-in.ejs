@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
 </head>
-<body>
-    <form action="/auth/sign-in" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required />
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required />
-        <button type="submit">Sign in</button>
-      </form>    
+<body class="background">
+    <div >
+            <form action="/auth/sign-in" method="POST">
+                <div class="sign-in form">
+                    <div class="input">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" required />
+                    </div>
+                    <div class="input">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required />
+                    </div>
+                    <div class="input">
+                        <button type="submit">Sign in</button>
+                    </div>
+                </div>
+            </form> 
+    </div>
 </body>
 </html>

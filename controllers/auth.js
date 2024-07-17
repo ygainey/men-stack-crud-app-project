@@ -5,7 +5,11 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 
 router.get('/sign-in', async (req, res) =>{
-    res.render('auth/sign-in.ejs')
+    try {
+        res.render('auth/sign-in.ejs')    
+    } catch (error) {
+        console(error)    
+    }    
 })
 
 router.post('/sign-in', async (req, res) =>{

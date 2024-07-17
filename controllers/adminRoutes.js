@@ -22,7 +22,15 @@ router.post('/', isAdminSignedIn, async (req, res) =>{
         // if(){
         //     throw new Error('Invalid input: Please complete all fields')
         // }
-        // Check if the username is already taken
+
+        req.body.contact = {
+            email: req.body.email,           
+            phone: req.body.phone,
+            address: req.body.address,
+            aboutMe: req.body.aboutMe,
+        }
+
+        // Check if the username is already taken       
         const userInDatabase = await User.findOne({ userName: req.body.username });
         if (userInDatabase) {
             return res.send('Username already taken.');
@@ -40,21 +48,66 @@ router.post('/', isAdminSignedIn, async (req, res) =>{
         // Convert tick-box Boolean
         req.body.isAdmin = Boolean(req.body.isAdmin)
 
-        await User.create(req.body)
-        res.redirect('/index')
+        const newUser = await User.create(req.body)
+
+        res.redirect('/index/directory')
     } catch (error) {
         //res.render('/sign-up.ejs', {errorMessage : error.message})
         console.log(error) 
     }
 })
 
+//delete
 router.delete('/:uID/delete', isAdminSignedIn, async (req, res) =>{
-    await User.findByIdAndDelete(req.params.uID)
-    res.redirect('/index/directory')
+    try {
+        await User.findByIdAndDelete(req.params.uID)
+        res.redirect('/index/directory')   
+    } catch (error) {
+        
+    }
+    // await User.findByIdAndDelete(req.params.uID)
+    // res.redirect('/index/directory')
 })
 
-router.get('/:ID/edit', isAdminSignedIn, async (req, res) =>{
-    await User.findByIdAndDelete(req.params.uID)
+//edit-update
+router.get('/:uID/edit', isAdminSignedIn, async (req, res) =>{
+    try {
+        const uID = req.params.uID
+        const foundUser = await User.findById(uID)
+        res.render('admin/update.ejs', {User : foundUser})          
+    } catch (error) {
+        
+    }
+//     const uID = req.params.uID
+//     const foundUser = await User.findById(uID)
+//     res.render('admin/update.ejs', {User : foundUser})  
+})
+
+router.put('/:uID', isAdminSignedIn, async (req, res) =>{
+    try {
+        const uID = req.params.uID
+        req.body.contact = {
+            email: req.body.email,           
+            phone: req.body.phone,
+            address: req.body.address,
+            aboutMe: req.body.aboutMe,
+        }
+        req.body.isAdmin = Boolean(req.body.isAdmin)
+        await User.findByIdAndUpdate(uID, req.body)
+        res.redirect(`/index/directory/id/${uID}`)     
+    } catch (error) {
+        
+    }
+    // const uID = req.params.uID
+    // req.body.contact = {
+    //     email: req.body.email,           
+    //     phone: req.body.phone,
+    //     address: req.body.address,
+    //     aboutMe: req.body.aboutMe,
+    // }
+    // req.body.isAdmin = Boolean(req.body.isAdmin)
+    // await User.findByIdAndUpdate(uID, req.body)
+    // res.redirect(`/index/directory/id/${uID}`)    
 })
 
 module.exports = router;

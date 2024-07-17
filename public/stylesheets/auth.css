@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+
+html, body {
+    height: 100%;
+}
+
+.background{
+    background-image: url('/assets/Log-in-page.png');
+    background-size: cover;
+    object-fit: fill;     
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 100%;
+    width: 100%; 
+}
+.sign-in{
+    color: white;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    padding-top: 700px;    
+}
+
+.sign-in.form{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: 350px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+.input.button{
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    
+}
+
+
+a{
+    color: inherit;           
+    text-decoration: none;   
+    font-weight: normal;     
+}

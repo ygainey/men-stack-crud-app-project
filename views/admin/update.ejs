@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <%- include('../partials/_nav.ejs') %>
+    <h1>Update User</h1>
+    <form action="/admin/<%=User._id%>?_method=PUT" method="POST">
+        <label for="userName">Username:</label>
+        <input type="text" name="userName" id="userName" value="<%= User.userName %>" required />
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= User.name %>" required/>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="<%= User.contact.email %>" required/>
+
+        <label for="phone">Phone:</label>
+        <input type="number" name="phone" id="phone" value="<%= User.contact.phone %>" required/>
+
+        <label for="team">Team:</label>
+        <select id="team" name="team" required>
+            <option>Engineer</option>
+            <option>HR</option>
+            <option>Marketing</option>
+            <option>Operations</option>
+        </select>
+
+        <label for="isAdmin">Admin:</label>
+        <input type="checkbox" name="isAdmin" id="isAdmin" />
+
+        <button type="submit">Update User</button>
+    </form>    
 </body>
 </html>
