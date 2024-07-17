@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+
+.header-image{
+    background-image: url('/assets/header.png');
+    background-size: cover;
+    object-fit: fill;     
+    background-repeat: no-repeat;
+    height: 30%;
+}
+.navbar{
+    width: 20%;
+    height: 70%;
+    background: radial-gradient(white 50%, #115E75 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}

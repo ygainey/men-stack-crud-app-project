@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+
+html, body {
+    height: 100%;
+}
+span{
+    width: 70%;
+}
+.container{
+    background: radial-gradient(white 40%, #115E75 100%);
+    height: 500px;
+}

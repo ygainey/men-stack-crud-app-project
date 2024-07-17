@@ -4,22 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/body.css" />
 </head>
-    <h3>Name: </h3>
-    <h1><%= User.name%></h1>
-    <h3>Team: </h3>
-    <h1><%= User.team%></h1>
-    <h3>Email: </h3>
-    <h1><%= User.contact.email%></h1>
-    <h3>Phone: </h3>
-    <h1><%= User.contact.phone%></h1>
-    <h3>About Me:</h3>
-    <h1><%= ></h1>
+<body>
+    <%- include('../partials/_nav.ejs') %>
+    <div class="show-user container">
+        <div>
+            <h3>Name: </h3>
+            <h1><%= User.name%></h1>
+        </div>
+        <div>
+            <h3>Team: </h3>
+            <h1><%= User.team%></h1>
+        </div> 
+        <div>
+        <h3>Email: </h3>
+        <h1><%= User.contact.email%></h1>
+        </div> 
+        <div>
+            <h3>Phone: </h3>
+            <h1><%= User.contact.phone%></h1>
+        </div>
+        <div>
+            <h3>About Me:</h3>
+            <h1><%= User.contact.aboutMe %></h1>
+        </div>
 
-
-
-    <form action="/admin/<%=User._id%>/delete?_method=DELETE" method="POST">
-    <button type="submit">Delete User: <%= User.name %></button>
-    <a href="/admin/<%=User._id%>/edit"><p>Edit User</p></a>
-</form>
+        <div>
+            <form action="/admin/<%=User._id%>/delete?_method=DELETE" method="POST">
+                <button type="submit">Delete: <%= User.name %></button>
+                <a href="/admin/<%=User._id%>/edit"><p>Edit User</p></a>
+            </form>
+        </div>
+    </div>
+</body>
 </html>

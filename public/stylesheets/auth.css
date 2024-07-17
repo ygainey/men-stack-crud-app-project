@@ -37,9 +37,17 @@ html, body {
     display: flex;
     justify-content: space-between;
     width: 350px;
-    
+    margin: 5px;
 }
-
+button{
+    background-color: white; 
+    border: none;               
+    text-align: center;        
+    text-decoration: none;     
+    font-size: 14px;            
+    border-radius: 4px;         
+    cursor: pointer;  
+}
 
 a{
     color: inherit;           

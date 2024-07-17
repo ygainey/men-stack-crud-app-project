@@ -44,7 +44,7 @@ app.use(
     })
 );
 app.use(passUserToView);
-
+ 
 //homepage
 app.get('/', (req, res) =>{
     if(req.session.user){
@@ -53,8 +53,8 @@ app.get('/', (req, res) =>{
         res.render('index.ejs')
     }
     
-});
-
+}); 
+  
 //auth
 app.use('/auth', authController)
 app.use(isSignedIn)
@@ -62,12 +62,12 @@ app.use(isSignedIn)
 app.use('/index', routesController)
 app.use('/admin', adRoutesController)
 
- 
+  
 //generic 404 page
 app.get('*', (req, res) => {
     res.render('404.ejs')
 })
-
+  
 //listen
 app.listen(port, () => {
     console.log(`Express app ready on ${port}`)
