@@ -8,7 +8,8 @@ router.get('/sign-in', async (req, res) =>{
     try {
         res.render('auth/sign-in.ejs')    
     } catch (error) {
-        console(error)    
+        console(error)
+        res.redirect('/')    
     }    
 })
 
