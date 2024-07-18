@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.on('connected', () =>{
     console.log(`Connected to DB: ${mongoose.connection.name}`)
 })
-
+     
 //middleware used through application
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));

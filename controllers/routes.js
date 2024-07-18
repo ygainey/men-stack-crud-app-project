@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         if(req.session.user.isAdmin){
             res.render('admin/index.ejs')
         } else {
-            res.redirect('/profile')
+            res.redirect('/index/profile')
         }
     } catch (error) {
        console.log(error) 

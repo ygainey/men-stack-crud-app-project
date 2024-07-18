@@ -9,7 +9,6 @@
 }
 .navbar{
     width: 20%;
-    height: 70%;
     background: radial-gradient(white 50%, #115E75 100%);
     display: flex;
     align-items: center;

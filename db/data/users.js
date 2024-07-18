@@ -18,6 +18,22 @@ module.exports = [
         
     },
     {
+        userName: "user",
+        password: bcrypt.hashSync('user', 10),
+        name: "admin",
+        dOB: new Date('1990-01-01'),
+        isAdmin: false,
+        team: "HR",
+        contact: 
+            {
+                email: "test@example.com",
+                phone: 1234567890,
+                address: "test",
+                aboutMe: "test"
+            }
+        
+    },
+    {
         userName: "johnDoe123",
         password: bcrypt.hashSync('pass', 10),
         name: "John Doe",
