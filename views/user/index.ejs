@@ -12,3 +12,80 @@
     
 </body>
 </html>
+<h3>User Name: </h3>
+            <h3><%= User.userName%></h3>
+            <h3>Name: </h3>
+            <h3><%= User.name%></h3>
+            <h3>Team: </h3>
+            <h1><%= User.team%></h1>
+            <h3>Email: </h3>
+            <h1><%= User.contact.email%></h1>
+            <h3>Phone: </h3>
+            <h3><%= User.contact.phone%></h3>
+            <h3>Adress: </h3>
+            <h1><%= User.contact.address%></h3>
+            <h3>About Me: </h3>
+            <h3><%= User.contact.aboutMe%></h3>
+
+            <a href="profile/edit"><p>Edit Profile</p></a>
+            <a href="profile/edit-pass"><p>Edit Password</p></a>
+
+
+<%- include('../partials/_headerimage.ejs') %>
+<div class="pagewrap">
+
+    <%- include('../partials/_nav.ejs') %>
+    <div class="container">
+
+        <div class="flex1">
+            <div class="flex2">
+                <h3>User Name: </h3>
+                <h3>
+                    <%= User.userName%>
+                </h3>
+            </div>
+            <div class="flex2">
+                <h3>Name: </h3>
+                <h3>
+                    <%= User.name%>
+                </h3>
+            </div>
+            <div class="flex2">
+                <h3>Team: </h3>
+                <h3>
+                    <%= User.team%>
+                </h3>
+            </div>
+            <div class="flex2">
+                <h3>Email: </h3>
+                <h3>
+                    <%= User.contact.email%>
+                </h3>
+            </div>
+            <div class="flex2">
+                <h3>Phone: </h3>
+                <h3>
+                    <%= User.contact.phone%>
+                </h3>
+            </div>
+            <div class="flex2">
+                <h3>Address:</h3>
+                <h3>
+                    <%= User.contact.address %>
+                </h3>
+            </div>
+
+            <div class="flex2">
+                <h3>About Me:</h3>
+                <h3>
+                    <%= User.contact.aboutMe %>
+                </h3>
+            </div>
+            <div class="subBtn">
+                <p><a href="profile/edit">Edit Profile</a></p>
+                <p><a href="profile/edit-pass">Edit Password</a></p>
+            </div>
+        
+        </div>
+    </div>
+</div>

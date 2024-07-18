@@ -10,4 +10,26 @@ html, body {
 .container{
     background: radial-gradient(white 40%, #115E75 100%);
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+}
+.flex1{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 5px;
+}
+.flex2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+.subBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

@@ -11,33 +11,43 @@
     <%- include('../partials/_headerimage.ejs') %>
     <div class="pagewrap">
         <%- include('../partials/_nav.ejs') %>
-        <h1>Update User</h1>
-        <form action="/admin/<%=User._id%>?_method=PUT" method="POST">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" id="userName" value="<%= User.userName %>" required />
-            
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" value="<%= User.name %>" required/>
-
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email" value="<%= User.contact.email %>" required/>
-
-            <label for="phone">Phone:</label>
-            <input type="number" name="phone" id="phone" value="<%= User.contact.phone %>" required/>
-
-            <label for="team">Team:</label>
-            <select id="team" name="team" required>
-                <option>Engineer</option>
-                <option>HR</option>
-                <option>Marketing</option>
-                <option>Operations</option>
-            </select>
-
-            <label for="isAdmin">Admin:</label>
-            <input type="checkbox" name="isAdmin" id="isAdmin" />
-
-            <button type="submit">Update User</button>
-        </form>
+        <div class="container">
+            <h1>Update User</h1>
+            <form action="/admin/<%=User._id%>?_method=PUT" method="POST">
+                <div class="flex1">
+                    <div class="flex2">
+                    <label for="userName">Username:</label>
+                    <input type="text" name="userName" id="userName" value="<%= User.userName %>" required />
+                    </div>
+                    <div class="flex2">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" value="<%= User.name %>" required/>
+                    </div>
+                    <div class="flex2">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" value="<%= User.contact.email %>" required/>
+                    </div>
+                    <div class="flex2">
+                        <label for="phone">Phone:</label>
+                        <input type="number" name="phone" id="phone" value="<%= User.contact.phone %>" required/>
+                    </div>
+                    <div class="flex2"></div>
+                        <label for="team">Team:</label>
+                        <select id="team" name="team" required>
+                            <option>Engineer</option>
+                            <option>HR</option>
+                            <option>Marketing</option>
+                            <option>Operations</option>
+                        </select>
+                    </div>
+                    <div class="flex2">
+                        <label for="isAdmin">Admin:</label>
+                        <input type="checkbox" name="isAdmin" id="isAdmin" />
+                    </div>
+                    <button type="submit">Update User</button>
+                </div>
+            </form>
+        </div>
     </div>    
 </body>
 </html>

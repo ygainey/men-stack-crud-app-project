@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,63 @@
     <link rel="stylesheet" href="/stylesheets/navbar.css" />
     <link rel="stylesheet" href="/stylesheets/body.css" />
 </head>
+
 <body>
     <%- include('../partials/_headerimage.ejs') %>
-    <div class="pagewrap">
-        <%- include('../partials/_nav.ejs') %>
-        <h1>Create New User</h1>
-        <form action="/admin" method="POST">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" id="userName"  required />
-
-            <label for="password">Pasword:</label>
-            <input type="password" name="password" id="password" required />
-
-            <label for="confirmpassword">Confirm Password:</label>
-            <input type="password" name="confirmpassword" id="confirmpassword" required/>
-            
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name"  required/>
-
-            <label for="dOB">Date Of Birth:</label>
-            <input type="date" name="dOB" id="dOB"  required/>
-
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email"  required/>
-
-            <label for="phone">Phone:</label>
-            <input type="number" name="phone" id="phone"  required/>
-
-            <label for="team">Team:</label>
-            <select id="team" name="team" required>
-                <option>Engineer</option>
-                <option>HR</option>
-                <option>Marketing</option>
-                <option>Operations</option>
-            </select>
-
-            <label for="isAdmin">Admin:</label>
-            <input type="checkbox" name="isAdmin" id="isAdmin" />
-
-            <button type="submit">Create User</button>
-        </form>
-    </div>
+        <div class="pagewrap">
+            <%- include('../partials/_nav.ejs') %>
+                <div class="container">
+                    <h1>Create New User</h1>
+                    <form action="/admin" method="POST">
+                        <div class="flex1">
+                            <div class="flex2">
+                                <label for="userName">Username:</label>
+                                <input type="text" name="userName" id="userName" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="password">Pasword:</label>
+                                <input type="password" name="password" id="password" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="confirmpassword">Confirm Password:</label>
+                                <input type="password" name="confirmpassword" id="confirmpassword" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" id="name" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="dOB">Date Of Birth:</label>
+                                <input type="date" name="dOB" id="dOB" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="email">Email:</label>
+                                <input type="text" name="email" id="email" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="phone">Phone:</label>
+                                <input type="number" name="phone" id="phone" required />
+                            </div>
+                            <div class="flex2">
+                                <label for="team">Team:</label>
+                                <select id="team" name="team" required>
+                                    <option>Engineer</option>
+                                    <option>HR</option>
+                                    <option>Marketing</option>
+                                    <option>Operations</option>
+                                </select>
+                            </div>
+                            <div class="flex2">
+                                <label for="isAdmin">Admin:</label>
+                                <input type="checkbox" name="isAdmin" id="isAdmin" />
+                            </div>
+                            <div class="subBtn">
+                                <button type="submit">Create User</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
 </body>
+
 </html>

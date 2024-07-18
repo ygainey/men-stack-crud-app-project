@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/body.css" />
 </head>
 <body>
-    <%- include('./partials/_nav.ejs') %>
-    <h1>Page Not Found</h1>       
+    <%- include('./partials/_headerimage.ejs') %>
+    <div class="pagewrap">
+    
+        <%- include('./partials/_nav.ejs') %>
+        <div class="container">
+    
+            <div class="flex1">
+                <h1>Page Not Found</h1>
+            </div>
+        </div>
+    </div>       
 </body>
 </html>

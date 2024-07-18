@@ -8,25 +8,34 @@
     <link rel="stylesheet" href="/stylesheets/body.css" />
 </head>
 <body>
-    <%- include('../partials/_nav.ejs') %>
+    <%- include('../partials/_headerimage.ejs') %>
+    <div class="pagewrap">
     
-    <h1>Update Your Profile: <%= User.name %></h1>
-    <form action="/index/profile/edit/confirm?_method=PUT" method="POST">
-
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" value="<%= User.contact.email %>" required/>
-
-        <label for="phone">Phone:</label>
-        <input type="number" name="phone" id="phone" value="<%= User.contact.phone %>" required/>
-
-        <label for="address">Email:</label>
-        <input type="text" name="address" id="address" value="<%= User.contact.address %>" />
-
-        <label for="aboutMe">About Me:</label>
-        <input type="text" name="aboutMe" id="aboutMe" value="<%= User.contact.aboutMe %>" />
-
-
-        <button type="submit">Update User</button>
-    </form>
+        <%- include('../partials/_nav.ejs') %>
+        <div class="container">
+            <h1>Update Your Profile: <%= User.name %></h1>
+            <form action="/index/profile/edit/confirm?_method=PUT" method="POST">
+                <div class="flex1">
+                    <div class="flex2">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="<%= User.contact.email %>" required/>
+                    </div>
+                        <label for="phone">Phone:</label>
+                        <input type="number" name="phone" id="phone" value="<%= User.contact.phone %>" required/>
+                    <div class="flex2">
+                        <label for="address">Email:</label>
+                        <input type="text" name="address" id="address" value="<%= User.contact.address %>" />
+                    </div>
+                    <div class="flex2">
+                        <label for="aboutMe">About Me:</label>
+                        <input type="text" name="aboutMe" id="aboutMe" value="<%= User.contact.aboutMe %>" />
+                    </div>
+                    <div class="subBtn">
+                        <button type="submit">Update User</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

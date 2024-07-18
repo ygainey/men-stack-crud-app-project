@@ -20,7 +20,7 @@ module.exports = [
     {
         userName: "user",
         password: bcrypt.hashSync('user', 10),
-        name: "admin",
+        name: "user",
         dOB: new Date('1990-01-01'),
         isAdmin: false,
         team: "HR",
