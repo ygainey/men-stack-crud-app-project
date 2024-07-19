@@ -15,3 +15,7 @@
     flex-direction: column;
     padding-top: 10%;
 }
+.navlist{
+    list-style-type: none;
+}
+

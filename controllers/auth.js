@@ -24,24 +24,16 @@ router.post('/sign-in', async (req, res) =>{
         if (!validPassword) {
             return res.send('Login failed. Please try again.');
         }
-        
-        //non hashed for testing
-        // if(req.body.password !== userInDatabase.password){
-        //     return res.send('Login failed. Please try again.');
-        // }
         req.session.user = {
             userName: userInDatabase.username,
             _id: userInDatabase._id,
             isAdmin: userInDatabase.isAdmin
         }
         
-        console.log('signed in succesfully')
-        
         req.session.save(() => {
             res.redirect('/index');
         })
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })

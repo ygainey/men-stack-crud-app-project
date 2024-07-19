@@ -46,19 +46,3 @@ const employeeSchema = mongoose.Schema({
 const User = mongoose.model('User', employeeSchema)
 
 module.exports = User
-
-
-
-
-
-
-//team: [teamSchema],
-
-
-// const teamSchema = mongoose.Schema({
-//     teamName: {
-//         type: String,
-//         required: true
-//     },
-//     teamFunction: ['Engineer', 'HR', 'Marketing', 'Operations']
-// })

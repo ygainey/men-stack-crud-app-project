@@ -100,7 +100,6 @@ router.get('/directory/team/:teamName', async (req, res) => {
         const foundTeam = await User.find({team : team}) 
         res.render('user/showteam.ejs', {team: foundTeam, teamName: team}) 
     } catch (error) {
-        console.log(error) 
         res.render('404.ejs') 
     }
 })
@@ -118,7 +117,6 @@ router.get('/directory/id/:uID', async (req, res) =>{
             res.render('user/showuser.ejs', {User : foundUser})
         }
     } catch (error) {
-        console.log(error)
         res.render('404.ejs') 
     }
 })

@@ -11,7 +11,7 @@ router.get('/sign-up', isAdminSignedIn, async (req, res) =>{
     try {
         res.render('admin/createuser.ejs')
     } catch (error) {
-        console.log(error)     
+        res.render('404.ejs')     
     }
     
 })
@@ -19,10 +19,6 @@ router.get('/sign-up', isAdminSignedIn, async (req, res) =>{
 //create user
 router.post('/', isAdminSignedIn, async (req, res) =>{
     try {
-        // if(){
-        //     throw new Error('Invalid input: Please complete all fields')
-        // }
-
         req.body.contact = {
             email: req.body.email,           
             phone: req.body.phone,
@@ -52,8 +48,7 @@ router.post('/', isAdminSignedIn, async (req, res) =>{
 
         res.redirect('/index/directory')
     } catch (error) {
-        //res.render('/sign-up.ejs', {errorMessage : error.message})
-        console.log(error) 
+        res.render('404.ejs')
     }
 })
 
@@ -63,10 +58,8 @@ router.delete('/:uID/delete', isAdminSignedIn, async (req, res) =>{
         await User.findByIdAndDelete(req.params.uID)
         res.redirect('/index/directory')   
     } catch (error) {
-        
+        res.render('404.ejs')
     }
-    // await User.findByIdAndDelete(req.params.uID)
-    // res.redirect('/index/directory')
 })
 
 //edit-update
@@ -76,11 +69,8 @@ router.get('/:uID/edit', isAdminSignedIn, async (req, res) =>{
         const foundUser = await User.findById(uID)
         res.render('admin/update.ejs', {User : foundUser})          
     } catch (error) {
-        
+        res.render('404.ejs')
     }
-//     const uID = req.params.uID
-//     const foundUser = await User.findById(uID)
-//     res.render('admin/update.ejs', {User : foundUser})  
 })
 
 router.put('/:uID', isAdminSignedIn, async (req, res) =>{
@@ -96,18 +86,8 @@ router.put('/:uID', isAdminSignedIn, async (req, res) =>{
         await User.findByIdAndUpdate(uID, req.body)
         res.redirect(`/index/directory/id/${uID}`)     
     } catch (error) {
-        
-    }
-    // const uID = req.params.uID
-    // req.body.contact = {
-    //     email: req.body.email,           
-    //     phone: req.body.phone,
-    //     address: req.body.address,
-    //     aboutMe: req.body.aboutMe,
-    // }
-    // req.body.isAdmin = Boolean(req.body.isAdmin)
-    // await User.findByIdAndUpdate(uID, req.body)
-    // res.redirect(`/index/directory/id/${uID}`)    
+        res.render('404.ejs')
+    }   
 })
 
 module.exports = router;
