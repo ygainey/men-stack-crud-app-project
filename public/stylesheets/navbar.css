@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
 
 .header-image{
-    background-image: url('/assets/header.png');
+    background-image: url('https://res.cloudinary.com/dr9aiqtjj/image/upload/v1721387531/Work_qgj5gv.png');
     background-size: cover;
     object-fit: fill;     
     background-repeat: no-repeat;

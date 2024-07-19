@@ -5,7 +5,7 @@ html, body {
 }
 
 .background{
-    background-image: url('/assets/Log-in-page.png');
+    background-image: url('https://res.cloudinary.com/dr9aiqtjj/image/upload/v1721387552/Work_2_nzhjlq.png');
     background-size: cover;
     object-fit: fill;     
     background-repeat: no-repeat;
